@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="./js/lib/react.js"></script>
+    <script src="./js/lib/react-dom.js"></script>
+
+    <link rel="stylesheet" href="./css/style.css" type="text/css"/>
+    <script src="./js/lib/browser.min.js"></script>
+    <script src="./js/lib/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="item-list"></div>
+    <div id="video-container" style="position:absolute;left:415px;top:50px;width:840px;height:438px;">
+      <div id="video" style="background:#000000;width:840px;height:438px"></div>
+      <div id="video-controller" style="position:absolute;top:438px;"></div>
+    </div>
+    <script src="./js/common/default_data.js"></script>
+    <script src="./js/common/xmlhttprequest.js"></script>
+    <script src="./js/common/playvideotv.js"></script>
+    <script type="text/babel" src="./js/layout/video-layout.js"></script>
+    <script type="text/babel" src="./js/common/userdata.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        Modules.videoPlayerHandler = new videoPlayerTV();
+        if(Modules.videoPlayerHandler != null)
+        {
+          Modules.videoPlayerHandler.createVideoContainer();
+          Modules.videoPlayerHandler.setVideoTarget(document.getElementById("video"), 0);
+          //videoPlayerHandler.registerVideoEventListener(1, videoEventCallback);
+          Modules.videoPlayerHandler.setVideoAspectRatio(1);
+        }
+        $('#video').on('click', function(){
+          var _videoEle=document.getElementsByTagName('video')[0];
+          if(_videoEle.paused){
+            _videoEle.play()
+          }else{
+            _videoEle.pause();
+          }
+
+        })
+      })
+
+    </script>
+  </body>
+</html>

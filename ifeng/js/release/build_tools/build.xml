@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<project name="Javascript compress project" basedir="." default="compile_test">
+    <taskdef name="jscomp" classname="com.google.javascript.jscomp.ant.CompileTask"
+             classpath="./compiler.jar"/>
+	<target name="compile_test">
+			<jscomp compilationLevel="simple" warning="quiet"
+					debug="false" output="../ifengnews.min.js" languageIn="ECMASCRIPT5">
+				<sources dir="../../">
+					<file name="lib/react.js"/>
+					<file name="lib/react-dom.js"/>
+					<!--<file name="lib/browser.min.js"/>-->
+					<!--<file name="lib/jquery.min.js"/>-->
+				</sources>
+
+			</jscomp>
+	</target>
+</project>

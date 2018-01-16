@@ -1,0 +1,84 @@
+/**
+ * Created by mingruiwei on 2016/9/20.
+ */
+li{
+    width:375px;
+    /*height:90px;*/
+    margin: 2px;
+}
+.item_focus{
+
+    background-color:#FFFFFF
+
+}
+.item_normal {
+    color:#aaaaff;
+}
+.text_normal{
+    color:#cccccc;
+    text-overflow:ellipsis;
+}
+.text_area_play{
+    width:225px;
+    left:130px;
+    top:-90px;
+}
+.text_area_normal{
+    width:365px;
+    left:0px;
+}
+.text{
+    max-height: 90px;
+    margin:10px;
+    position:relative;
+    margin-left:10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+.text_focus{
+    color:#aaffff;
+    text-overflow:ellipsis;
+}
+.items_icon{
+    width:120px;
+    height:80px;
+}
+.item_bottom_line{
+    background:#cccccc;
+    position:relative;
+    width:375px;
+    height:2px;
+    top:6px;
+}
+.video_controller_background{
+    background: #cccccc;
+    width:838px;
+    height:20px;
+}
+.video_controller_duration{
+    position:relative;
+    left:10px;
+    background:#daa9b4;
+    width:740px;
+    height:4px;
+
+}
+.video_controller_currentTime{
+    position:relative;
+    left:10px;
+    top:-4px;
+    background:#ec0d55;
+    height:4px;
+
+}
+.video_time{
+    position:relative;
+    top:-13px;
+    left:760px;
+    font-size: 10px;
+    color:#aaaaaa;
+
+}
