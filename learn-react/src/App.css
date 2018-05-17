@@ -45,3 +45,92 @@ button{
 input{
   margin-top: 10px;
 }
+
+.bg-f {
+  background: $color-f;
+}
+.flex{
+  display: flex;
+  align-content: flex-start;
+}
+
+.flex-v-b {
+  display: flex;
+  align-content: space-between;
+}
+.center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-flex-v {
+  display: flex;
+  align-items: center;
+}
+.center-flex-h{
+  display: flex;
+  justify-content: center;
+}
+.flex-wa-yc{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.flex-wa-ch{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.flex-wa-cv{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.flex-wa{
+  display: flex;
+  flex-direction: column;
+}
+.flex-wrap{
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-nowrap{
+  display: flex;
+  flex-wrap: nowrap;
+}
+.flex-b{
+  display: flex;
+  justify-content: space-between;
+}
+.flex-b-yc{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex-start-end{
+  display: flex;
+  justify-content: flex-end;
+}
+.background-f{
+  background: #ffffff;
+}
+.full-width{
+  width: 100%;
+}
+.text-ellipsis{
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.text-nowrap {
+  white-space: nowrap;
+}
+.flex-full{
+  flex: 1;
+}
+.overflow_y_a{
+  overflow-y: auto;
+  -webkit-overflow-scrolling : touch;
+}

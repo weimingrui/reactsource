@@ -1,0 +1,23 @@
+.edit-student-detail-contain{
+    input,select{
+        padding: 2px 6px;
+        margin-left: 10px;
+    }
+    button{
+        border: none;
+        height: 30px;
+        width: 70px;
+        border-radius: 5px;
+        color:#ffffff;
+    }
+    .cancel{
+        margin-left: 10px;
+        border: none;
+        background-color: #dccc28ba;
+        color: #fff;
+        cursor:hand
+    }
+    .update{
+        background-color: #14c76b
+    }
+}

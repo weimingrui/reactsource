@@ -7,9 +7,7 @@ class EditStudentDetail extends Component {
         //不能调用state
     }
     state = {
-        model:{
-            gender:'1',
-        }
+        model:{}
     };
     static defaultProps = {
             name:'add',
@@ -29,28 +27,15 @@ class EditStudentDetail extends Component {
         return false;
     }
     updateStudent(e){
-        console.log(e)
         if(e.currentTarget.className=="grade"&&e.currentTarget.value>100){
             return false;
         }
-        if(e.currentTarget.className=="gender"){
-            
-            defaultStudent[e.currentTarget.className]=e.currentTarget.selectedIndex+1+'';
-        }else {
-            defaultStudent[e.currentTarget.className]=e.currentTarget.value;
-        }
+        defaultStudent[e.currentTarget.className]=e.currentTarget.value;
+        console.log('update-set',defaultStudent)
         this.setState({model:defaultStudent})
     }
     updateStudentData(){
-        if(!this.state.model.course){
-            alert('课程名称不能为空！')
-            return false;
-        }
-        if(!this.state.model.studentName){
-            alert('名字不能为空！')
-            return false;
-        }
-        if(!this.state.model.grade){
+        if(this.state.model.grade==''){
             alert('成绩不能为空！')
             return false;
         }
@@ -62,29 +47,20 @@ class EditStudentDetail extends Component {
             alert('请输入正确的手机号码')
             return false;
         }
-        this.props.add(defaultStudent);
+        this.props.update(defaultStudent);
+        console.log('update-0',defaultStudent)
         this.props.hide();
-        
     }
     render() {
         // console.log(this.state,this.props);
         return (
             <div className='student-detail-content center-flex edit-student-detail-contain'>
                 <div className="detail-content">
-                    <p className=""><span className="label">课程名称：</span>
-                        <input placeholder="请输入课程名称..." className="course" value={this.state.model.course|| ''} onChange={(e)=>{this.updateStudent(e)}}/>
-                    </p>
-                    <p className=""><span className="label">学生姓名：</span>
-                        <input placeholder="请输入学生名字..." className="studentName" value={this.state.model.name} onChange={(e)=>{this.updateStudent(e)}}/>
-                    </p>
-                    <p className=""><span className="label">学生性别：</span>
-                        <select className="gender" onChange={(e)=>{this.updateStudent(e)}}>
-                            <option value="selected">男</option>
-                            <option value="2">女</option>
-                        </select>
-                    </p>
+                    <p className=""><span className="label">课程名称：</span>{this.props.model.course}</p>
+                    <p className=""><span className="label">学生姓名：</span>{this.props.model.studentName}</p>
+                    <p className=""><span className="label">学生性别：</span>{this.props.model.gender=='1'?"男":"女"}</p>
                     <p className=""><span className="label">出生年月：</span>
-                    <input placeholder="请输入出生年月..." className="britch" value={this.state.model.britch|| ''} onChange={(e)=>{this.updateStudent(e)}}/>
+                        <input placeholder="请输入出生年月..." className="britch" value={this.state.model.britch|| ''} onChange={(e)=>{this.updateStudent(e)}}/>
                     </p>
                     <p className="">
                         <span className="label">课程成绩：</span>
@@ -100,7 +76,7 @@ class EditStudentDetail extends Component {
                     </p>
                     <div>
                         <button className="cancel" onClick={(e)=>{this.hidePopup(e)}}>取消</button>
-                        <button className="update" onClick={this.updateStudentData.bind(this)}>新增</button>
+                        <button className="update" onClick={(e)=>{this.updateStudentData(e)}}>更新</button>
                     </div>
                 </div>
             </div>

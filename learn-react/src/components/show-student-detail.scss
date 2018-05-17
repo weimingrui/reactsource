@@ -1,0 +1,29 @@
+.student-detail-content{
+    background-color: rgba($color: #333333, $alpha: 0.34);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    z-index: 10;
+    .detail-content{
+        background: white;
+        padding: 60px 150px;
+        // pointer-events: none;
+        p{
+            text-align: left;
+            margin-bottom: 40px
+        
+        }
+        .close{
+            margin-left: 10px;
+            border: none;
+            border-radius: 10px;
+            width: 120px;
+            height: 40px;
+            background-color: #dccc28ba;
+            color: #fff;
+            cursor:hand
+        }
+    }
+}
