@@ -8,20 +8,14 @@ class TableContentList extends Component {
     }
     state = {
     };
-    handleChange(rows){
-        this.setState({
-        list:rows
-        });
-    }
     static defaultProps = {
             name:'list',
             list:[]
     }
     
-    handleDel(index){
+    handleDel(item){
         // 更新数据，并使用 onDel 更新到 TodoList 的 state 中，以便 React自动render
-        this.props.list.splice(index, 1);
-        this.props.onDel(this.props.list);
+        this.props.onDel(item);
     }
     showDetail(data){
         this.props.onShowDetail(data);
@@ -54,7 +48,7 @@ class TableContentList extends Component {
                                     <span className="grade">{item.grade}</span>
                                 </p>
                                 <div>
-                                    <button className="detele" onClick={() => this.handleDel(i)} data-key={i}>删除</button>
+                                    <button className="detele" onClick={() => this.handleDel(item)} data-key={i}>删除</button>
                                     <button className="show" onClick={() => this.showDetail(item)} data-key={i}>查看</button>
                                     <button className="edit" onClick={() => this.editDetail(item)} data-key={i}>编辑</button>
                                 </div>

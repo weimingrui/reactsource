@@ -49,10 +49,21 @@ class App extends Component {
   componentWillMount(){
     this.setState({searchList:this.props.list,originList:this.props.list})
   }
-  handleChange(rows){
-    this.setState({
-      list:rows
-    });
+	deleteStudentDetail(data){
+		let newList = [];
+		this.state.originList.forEach(item => {
+			if(item.id+'' != data.id+''){
+				newList.push(item);
+			}
+		});
+		this.setState({originList:newList})
+		let newSList = [];
+		newList.forEach(item => {
+			if(item.name.indexOf(this.state.searchText)>-1){
+				newSList.push(item);
+			}
+		});
+		this.setState({searchList:newSList});
   }
   hideStudentDetail() {
     this.setState({isShowStudentDetail: 0,studentDetailModel:{}})
@@ -104,7 +115,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <TableContentList onDel={this.handleChange.bind(this)} 
+        <TableContentList onDel={this.deleteStudentDetail.bind(this)}
         list={this.state.searchList} 
         onShowDetail={this.showStudentDetail.bind(this)}
         onEditDetail={this.editStudentDetail.bind(this)}
